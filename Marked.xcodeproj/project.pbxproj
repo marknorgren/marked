@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,18 +12,11 @@
 		4D91713325CCDCD600DDF6DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D91713225CCDCD600DDF6DF /* Assets.xcassets */; };
 		4D91713625CCDCD600DDF6DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D91713525CCDCD600DDF6DF /* Preview Assets.xcassets */; };
 		4D91714125CCDCD600DDF6DF /* MarkedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91714025CCDCD600DDF6DF /* MarkedTests.swift */; };
-		4D91714C25CCDCD600DDF6DF /* MarkedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91714B25CCDCD600DDF6DF /* MarkedUITests.swift */; };
+		4D91717425CCE0E900DDF6DF /* FunctionalTestCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91717325CCE0E900DDF6DF /* FunctionalTestCredentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		4D91713D25CCDCD600DDF6DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D91712325CCDCD500DDF6DF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D91712A25CCDCD500DDF6DF;
-			remoteInfo = Marked;
-		};
-		4D91714825CCDCD600DDF6DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4D91712325CCDCD500DDF6DF /* Project object */;
 			proxyType = 1;
@@ -42,9 +35,7 @@
 		4D91713C25CCDCD600DDF6DF /* MarkedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D91714025CCDCD600DDF6DF /* MarkedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkedTests.swift; sourceTree = "<group>"; };
 		4D91714225CCDCD600DDF6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D91714725CCDCD600DDF6DF /* MarkedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D91714B25CCDCD600DDF6DF /* MarkedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkedUITests.swift; sourceTree = "<group>"; };
-		4D91714D25CCDCD600DDF6DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D91717325CCE0E900DDF6DF /* FunctionalTestCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionalTestCredentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D91714425CCDCD600DDF6DF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +61,6 @@
 			children = (
 				4D91712D25CCDCD500DDF6DF /* Marked */,
 				4D91713F25CCDCD600DDF6DF /* MarkedTests */,
-				4D91714A25CCDCD600DDF6DF /* MarkedUITests */,
 				4D91712C25CCDCD500DDF6DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +70,6 @@
 			children = (
 				4D91712B25CCDCD500DDF6DF /* Marked.app */,
 				4D91713C25CCDCD600DDF6DF /* MarkedTests.xctest */,
-				4D91714725CCDCD600DDF6DF /* MarkedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,19 +97,11 @@
 		4D91713F25CCDCD600DDF6DF /* MarkedTests */ = {
 			isa = PBXGroup;
 			children = (
+				4D91717325CCE0E900DDF6DF /* FunctionalTestCredentials.swift */,
 				4D91714025CCDCD600DDF6DF /* MarkedTests.swift */,
 				4D91714225CCDCD600DDF6DF /* Info.plist */,
 			);
 			path = MarkedTests;
-			sourceTree = "<group>";
-		};
-		4D91714A25CCDCD600DDF6DF /* MarkedUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4D91714B25CCDCD600DDF6DF /* MarkedUITests.swift */,
-				4D91714D25CCDCD600DDF6DF /* Info.plist */,
-			);
-			path = MarkedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D91715325CCDCD600DDF6DF /* Build configuration list for PBXNativeTarget "MarkedTests" */;
 			buildPhases = (
+				4D91716025CCDCFF00DDF6DF /* ShellScript */,
 				4D91713825CCDCD600DDF6DF /* Sources */,
 				4D91713925CCDCD600DDF6DF /* Frameworks */,
 				4D91713A25CCDCD600DDF6DF /* Resources */,
@@ -168,24 +143,6 @@
 			productReference = 4D91713C25CCDCD600DDF6DF /* MarkedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4D91714625CCDCD600DDF6DF /* MarkedUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D91715625CCDCD600DDF6DF /* Build configuration list for PBXNativeTarget "MarkedUITests" */;
-			buildPhases = (
-				4D91714325CCDCD600DDF6DF /* Sources */,
-				4D91714425CCDCD600DDF6DF /* Frameworks */,
-				4D91714525CCDCD600DDF6DF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4D91714925CCDCD600DDF6DF /* PBXTargetDependency */,
-			);
-			name = MarkedUITests;
-			productName = MarkedUITests;
-			productReference = 4D91714725CCDCD600DDF6DF /* MarkedUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,10 +156,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					4D91713B25CCDCD600DDF6DF = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 4D91712A25CCDCD500DDF6DF;
-					};
-					4D91714625CCDCD600DDF6DF = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 4D91712A25CCDCD500DDF6DF;
 					};
@@ -223,7 +176,6 @@
 			targets = (
 				4D91712A25CCDCD500DDF6DF /* Marked */,
 				4D91713B25CCDCD600DDF6DF /* MarkedTests */,
-				4D91714625CCDCD600DDF6DF /* MarkedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,14 +197,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D91714525CCDCD600DDF6DF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4D91716025CCDCFF00DDF6DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
 		};
-/* End PBXResourcesBuildPhase section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D91712725CCDCD500DDF6DF /* Sources */ = {
@@ -269,14 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D91714125CCDCD600DDF6DF /* MarkedTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D91714325CCDCD600DDF6DF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D91714C25CCDCD600DDF6DF /* MarkedUITests.swift in Sources */,
+				4D91717425CCE0E900DDF6DF /* FunctionalTestCredentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,11 +246,6 @@
 			isa = PBXTargetDependency;
 			target = 4D91712A25CCDCD500DDF6DF /* Marked */;
 			targetProxy = 4D91713D25CCDCD600DDF6DF /* PBXContainerItemProxy */;
-		};
-		4D91714925CCDCD600DDF6DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4D91712A25CCDCD500DDF6DF /* Marked */;
-			targetProxy = 4D91714825CCDCD600DDF6DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -500,46 +454,6 @@
 			};
 			name = Release;
 		};
-		4D91715725CCDCD600DDF6DF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Z2XT36CY3;
-				INFOPLIST_FILE = MarkedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedsystems.MarkedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Marked;
-			};
-			name = Debug;
-		};
-		4D91715825CCDCD600DDF6DF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6Z2XT36CY3;
-				INFOPLIST_FILE = MarkedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.markedsystems.MarkedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Marked;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -566,15 +480,6 @@
 			buildConfigurations = (
 				4D91715425CCDCD600DDF6DF /* Debug */,
 				4D91715525CCDCD600DDF6DF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D91715625CCDCD600DDF6DF /* Build configuration list for PBXNativeTarget "MarkedUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D91715725CCDCD600DDF6DF /* Debug */,
-				4D91715825CCDCD600DDF6DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
