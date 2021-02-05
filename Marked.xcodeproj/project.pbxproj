@@ -217,7 +217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Set test token\"\ntouch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
+			shellScript = "echo \"Set test token\"\ntouch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\ncat \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"  \npwd\necho \"\"\necho \"********\"\nls \"$SRCROOT/MarkedTests/\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
