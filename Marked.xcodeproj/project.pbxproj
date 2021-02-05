@@ -128,7 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D91715325CCDCD600DDF6DF /* Build configuration list for PBXNativeTarget "MarkedTests" */;
 			buildPhases = (
-				4D91716025CCDCFF00DDF6DF /* ShellScript */,
+				4D91716025CCDCFF00DDF6DF /* Set Test Token */,
 				4D91713825CCDCD600DDF6DF /* Sources */,
 				4D91713925CCDCD600DDF6DF /* Frameworks */,
 				4D91713A25CCDCD600DDF6DF /* Resources */,
@@ -200,7 +200,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4D91716025CCDCFF00DDF6DF /* ShellScript */ = {
+		4D91716025CCDCFF00DDF6DF /* Set Test Token */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -210,13 +210,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Set Test Token";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "touch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
+			shellScript = "echo \"Set test token\"\ntouch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
