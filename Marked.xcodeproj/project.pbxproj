@@ -129,9 +129,10 @@
 			buildConfigurationList = 4D91715325CCDCD600DDF6DF /* Build configuration list for PBXNativeTarget "MarkedTests" */;
 			buildPhases = (
 				4D91716025CCDCFF00DDF6DF /* Set Test Token */,
-				4D91713825CCDCD600DDF6DF /* Sources */,
+				4D91719125CD074700DDF6DF /* ShellScript */,
 				4D91713925CCDCD600DDF6DF /* Frameworks */,
 				4D91713A25CCDCD600DDF6DF /* Resources */,
+				4D91713825CCDCD600DDF6DF /* Sources */,
 			);
 			buildRules = (
 			);
@@ -218,7 +219,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"Set test token\"\ntouch \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\ncat \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"  \npwd\necho \"\"\necho \"********\"\nls \"$SRCROOT/MarkedTests/\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n    cat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n";
+			shellScript = "echo \"Set test token\"\ncat \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nls -la \"$SRCROOT/MarkedTests/\"\npwd\necho \"\"\necho \"********\"\nls -la \"$SRCROOT/MarkedTests/\"\nif [ -z \"$CI\" ]; \nthen\n    if [ -f $SRCROOT/.env ] \n    then\n        set -o allexport; source $SRCROOT/.env; set +o allexport\n    else\n            echo \"error: Add .env with credentials\"\n    exit 1\n    fi\nfi\n\ncat <<EOF >\"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\nstruct FunctionalTestCredentials {\n    static let token = \"$FUNCTIONAL_TEST_TOKEN\"\n    static let env = \"$MOBI_ENV\"\n}\nEOF\n\ncat \"$SRCROOT/MarkedTests/FunctionalTestCredentials.swift\"\n";
+		};
+		4D91719125CD074700DDF6DF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"hi\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
