@@ -209,6 +209,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/MarkedTests/FunctionalTestCredentials.swift",
 			);
 			name = "Set Test Token";
 			outputFileListPaths = (
